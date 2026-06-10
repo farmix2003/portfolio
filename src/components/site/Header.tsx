@@ -28,7 +28,7 @@ const Header = () => {
       <div className='mx-auto max-x-6xl px-4'>
         <div className={`flex items-center justify-between rounded-2xl px-4 py-2.5 transition-all duration-500 ${scrolled ? "glass-strong": "glass"}`}>
           <Link to="/" className="group flex items-center gap-2">
-            <span className="relative inline-flex h-7 w-7 items-center justify-center rounded-lg bg-linear-to-br from-primary to-secondary text-xs font-bold text-background animate-pulse-glow">AD</span>
+            <span className="relative inline-flex h-7 w-7 items-center justify-center rounded-lg bg-linear-to-br from-primary to-secondary text-xs font-bold text-background animate-pulse-glow">FD</span>
          <span className="font-display text-sm font-semibold tracking-tight">farmix<span className="text-primary">.dev</span></span>
           </Link>
           <nav className="hidden items-center gap-1 md:flex">
