@@ -1,24 +1,35 @@
-import AboutPreview from '#/components/site/AboutPreview'
-import { ExperienceSection } from '#/components/site/ExperienceSection'
-import { FeaturedProjects } from '#/components/site/FeaturedProjects'
-import Header from '#/components/site/Header'
-import Hero from '#/components/site/Hero'
-import SkillSection from '#/components/site/SkillSection'
-import Terminal from '#/components/site/Terminal'
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from "@tanstack/react-router";
+import { ExperienceSection } from "@/components/site/ExperienceSection";
+import { FeaturedProjects } from "@/components/site/FeaturedProjects";
+import { ContactCTA } from "@/components/site/ContactCTA";
+import Hero from "#/components/site/Hero";
+import AboutPreview from "#/components/site/AboutPreview";
+import SkillSection from "#/components/site/SkillSection";
+import Terminal from "#/components/site/Terminal";
 
-export const Route = createFileRoute('/')({ component: Home })
+export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Farukh Tugonov — Full Stack Software Engineer" },
+      { name: "description", content: "Full stack engineer shipping polished, performant products with React, Java and Postgres." },
+      { property: "og:title", content: "Farrukh Tugonov — Full Stack Software Engineer" },
+      { property: "og:url", content: "/" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+  }),
+  component: Index,
+});
 
-function Home() {
+function Index() {
   return (
-    <div className="p-8">
-      <Header />
+    <>
       <Hero />
       <AboutPreview />
       <SkillSection />
       <ExperienceSection />
       <FeaturedProjects />
       <Terminal />
-    </div>
-  )
+      <ContactCTA />
+    </>
+  );
 }
