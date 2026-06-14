@@ -56,12 +56,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Alex Dimitrov — Full Stack Software Engineer" },
-      { name: "description", content: "Portfolio of Alex Dimitrov, full stack software engineer building polished, performant products with React, Node, Java and Postgres." },
+      { title: "Farrukh Tugonov — Full Stack Software Engineer" },
+      { name: "description", content: "Portfolio of Farrukh Tugonov, full stack software engineer building polished, performant products with React, Java, Golang and Postgres." },
       { name: "author", content: "Alex Dimitrov" },
       { name: "theme-color", content: "#0A0A0A" },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "alex.dev" },
+      { property: "og:site_name", content: "Farrukh.dev" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
