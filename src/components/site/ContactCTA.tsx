@@ -1,6 +1,6 @@
-import { Link } from "@tanstack/react-router";
 import { ArrowRight, Mail } from "lucide-react";
 import Reveal from "./Reveal";
+import { TransitionLink } from "@/components/site/PageTransition";
 
 export function ContactCTA() {
   return (
@@ -21,9 +21,9 @@ I enjoy building clean, user-friendly applications and continuously improving my
            Feel free to reach out if you'd like to collaborate. 
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/contact" className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-primary to-secondary px-5 py-3 text-sm font-medium text-background shadow-[0_0_40px_-8px_var(--primary)] transition-all hover:scale-[1.03]">
+              <TransitionLink to="/contact" className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-primary to-secondary px-5 py-3 text-sm font-medium text-background shadow-[0_0_40px_-8px_var(--primary)] transition-all hover:scale-[1.03]">
                 Reach me<ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-              </Link>
+              </TransitionLink>
               <a href="mailto:tugonovfarrukh7@gmail.com" className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-5 py-3 text-sm font-medium transition-all hover:border-primary/50">
                 <Mail size={16} /> Email
               </a>

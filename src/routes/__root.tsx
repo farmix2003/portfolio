@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { Footer } from "@/components/site/Footer";
 import { MouseGlow } from "@/components/site/MouseGlow";
+import { PageTransition } from "@/components/site/PageTransition";
 import { ScrollProgress } from "#/components/site/ScrollProgress";
 import Header from "#/components/site/Header";
 import { reportLovableError } from "#/lib/error-report";
@@ -97,7 +98,9 @@ function RootComponent() {
       <MouseGlow />
       <Header />
       <main className="relative z-10">
-        <Outlet />
+        <PageTransition>
+          <Outlet />
+        </PageTransition>
       </main>
       <Footer />
     </QueryClientProvider>

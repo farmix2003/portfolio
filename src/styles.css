@@ -283,6 +283,122 @@
   animation: marquee 30s linear infinite;
 }
 
+.page-transition {
+  animation: page-enter 640ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.route-curtain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 35%, oklch(0.18 0.04 256 / 0.45), transparent 38%),
+    #000;
+  transform: translateY(-100%);
+  visibility: hidden;
+}
+
+.route-curtain-entering {
+  animation: route-curtain-enter 460ms cubic-bezier(0.76, 0, 0.24, 1) both;
+  visibility: visible;
+}
+
+.route-curtain-leaving {
+  animation: route-curtain-leave 560ms cubic-bezier(0.76, 0, 0.24, 1) both;
+  visibility: visible;
+}
+
+.route-curtain-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 24px;
+  text-align: center;
+}
+
+.route-curtain-kicker {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted-foreground);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.route-curtain-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 8vw, 6rem);
+  font-weight: 700;
+  line-height: 0.95;
+  text-transform: capitalize;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.route-curtain-line {
+  position: relative;
+  margin-top: 12px;
+  height: 1px;
+  width: min(260px, 58vw);
+  overflow: hidden;
+  background: oklch(1 0 0 / 12%);
+}
+
+.route-curtain-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-primary);
+  transform: translateX(-100%);
+  animation: route-line-load 780ms ease-in-out infinite;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.992);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes route-curtain-enter {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes route-curtain-leave {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes route-line-load {
+  to {
+    transform: translateX(100%);
+  }
+}
+
 /* ==============================================
    UNIVERSAL SCROLL STYLES
    Drop into your global CSS entry point
