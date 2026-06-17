@@ -130,19 +130,16 @@ const About = () => {
   )
 }
 
-export const Route = createFileRoute('/about') ({
-   head: ()=>{
-    {
-        meta:[
-            {title:"About - Farrukh Tugonov"},
+export const Route = createFileRoute('/about')({
+   head: () => ({
+    meta: [
+       {title:"About - Farrukh Tugonov"},
             {name: "description", content: "Career journey, strengths, education and personal interests of full stack engineer Farrukh Tugonov"},
             { property: "og:title", content: "About — Farrukh Tugonov" },
       { property: "og:description", content: "The story, strengths and stack behind farrukh.dev." },
       { property: "og:url", content: "/about" },
-        ]
-    links: [{ rel: "canonical", href: "/about" }
-        ]
-    }
-   },
-   component: About
-})
+    ],
+    links: [{ rel: "canonical", href: "/about" }],
+  }),
+  component: About,
+});

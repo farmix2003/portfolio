@@ -107,19 +107,29 @@ export const projects = [
     accent: "from-secondary to-primary",
   },
   {
-    title: "Personal Blog System (Training Project)",
-    description:
-      "A training project focused on building a structured blogging system with full-stack architecture and REST API design.",
-    tags: ["Node.js", "Express", "MongoDB", "React"],
-    github: "https://github.com",
-    demo: "https://example.com",
-    highlights: [
-      "REST API design",
-      "User authentication flow",
-      "Content management system",
-    ],
-    accent: "from-primary to-secondary",
-  },
+  title: "IMDb Clone",
+  description:
+    "Movie discovery application built with React and external movie APIs, featuring search, filtering, and detailed movie information.",
+  tags: ["React", "JavaScript", "REST API"],
+  highlights: [
+    "Movie search",
+    "API integration",
+    "Dynamic filtering",
+  ],
+  accent: "from-primary to-secondary",
+},
+{
+  title: "E-Commerce Store",
+  description:
+    "Frontend e-commerce application with product search, category filtering, and shopping cart functionality.",
+  tags: ["React", "JavaScript", "CSS"],
+  highlights: [
+    "Shopping cart",
+    "Product filtering",
+    "Search functionality",
+  ],
+  accent: "from-primary to-secondary",
+},
   {
     title: "Portfolio Website",
     description:
@@ -140,21 +150,27 @@ export const certifications = [
   {
     name: "JavaScript Software Development Certificate",
     org: "ITransition",
-    date: "2025",
+    date: "2024",
     verify: "#",
   },
   {
     name: "REST API Fundamentals",
     org: "LinkedIn Learning",
-    date: "2025",
+    date: "2026",
     verify: "#",
   },
   {
     name: "Java Persistence API (JPA) Fundamentals",
     org: "LinkedIn Learning",
-    date: "2025",
+    date: "2026",
     verify: "#",
   },
+  {
+    name: "Spring boot 3 Essentials",
+    org: "LinkedIn Learning",
+    date: "2026",
+    verify: "#"
+  }
 ];
 
 export const articles = [
@@ -162,6 +178,8 @@ export const articles = [
     title: "Building EatEase: My Diploma Full-Stack Project",
     excerpt:
       "How I built a food ordering system using Spring Boot, React, TypeScript, and MySQL.",
+    content:
+      "EatEase was my diploma project and one of the projects where I practiced connecting a real frontend with a structured backend. I built the application around food ordering workflows, including role-based access for users and administrators, menu management, order handling, and REST API communication between React and Spring Boot. The project helped me understand how small UI decisions depend on backend data design, validation, and predictable API responses.",
     category: "Full Stack",
     minutes: 7,
     date: "2026",
@@ -171,6 +189,8 @@ export const articles = [
     title: "What I learned building a MERN blog system",
     excerpt:
       "Lessons from building a full-stack blog platform during my ITransition training.",
+    content:
+      "The MERN blog system was a training project where I learned how authentication, protected routes, CRUD operations, and database-backed content management fit together. I worked with MongoDB, Express, React, and Node.js to create posts, manage user sessions, and keep the UI responsive across common flows. Even though this portfolio does not publish real blog posts, the project was useful because it showed me how to think through full-stack feature ownership from schema to screen.",
     category: "Full Stack",
     minutes: 6,
     date: "2026",
@@ -180,6 +200,8 @@ export const articles = [
     title: "Understanding REST APIs in real projects",
     excerpt:
       "How frontend and backend communicate using REST in Spring Boot and Node.js apps.",
+    content:
+      "REST APIs became clearer to me once I used them inside real project flows instead of only reading about endpoints. In my projects, I practiced sending requests from React, handling loading and error states, validating backend responses, and organizing controller logic in Spring Boot or Express. This helped me see APIs as contracts between parts of the application, where clear data shapes and consistent status handling make the frontend much easier to build.",
     category: "Backend",
     minutes: 5,
     date: "2026",
@@ -188,6 +210,8 @@ export const articles = [
     title: "My experience learning Java Persistence (JPA)",
     excerpt:
       "How ORM simplified database interaction in Java backend development.",
+    content:
+      "Learning JPA helped me understand how Java applications can work with relational databases without manually writing every query. I practiced defining entities, relationships, repositories, and service-layer logic, then connected those pieces to REST endpoints. The most valuable part was learning where ORM helps productivity and where developers still need to think carefully about data modeling, joins, transactions, and query performance.",
     category: "Backend",
     minutes: 5,
     date: "2026",
@@ -196,6 +220,8 @@ export const articles = [
     title: "From training to real projects: my developer journey",
     excerpt:
       "How ITransition training helped me transition into full-stack development.",
+    content:
+      "My path into full-stack development has been built through training, internships, and practical projects. ITransition gave me a strong base in JavaScript, React, Node.js, authentication, and CRUD applications, while later work helped me apply those fundamentals to more realistic UI and API problems. I am still learning, but each project has made me more confident about building complete features, reading existing code, and improving user experience through steady iteration.",
     category: "Career",
     minutes: 4,
     date: "2026",
