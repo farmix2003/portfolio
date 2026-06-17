@@ -12,6 +12,9 @@ const config = defineConfig({
     tanstackRouter({ target: 'react', autoCodeSplitting: true }),
     viteReact(),
   ],
+  build:{
+    outDir:'dist/client'
+  }
 })
 
 export default config
