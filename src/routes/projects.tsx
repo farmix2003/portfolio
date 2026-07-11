@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/site/PageHeader";
 import { ProjectCard } from "@/components/site/ProjectCard";
 import { projects, certifications } from "@/lib/portfolio-data";
 import { BadgeCheck } from "lucide-react";
+import { useLanguage } from "#/lib/i18n";
 import Reveal from "#/components/site/Reveal";
 
 export const Route = createFileRoute("/projects")({
@@ -20,16 +21,18 @@ export const Route = createFileRoute("/projects")({
 });
 
 function ProjectsPage() {
+  const { text } = useLanguage();
+
   return (
     <>
-      <PageHeader eyebrow="Selected work" title={<>Projects worth <span className="text-gradient">opening</span>.</>}>
-        A sample of products I've designed, engineered, and shipped from training, internships, and personal practice.
+      <PageHeader eyebrow={text.projectsPage.eyebrow} title={<>{text.projectsPage.title} <span className="text-gradient">{text.projectsPage.gradient}</span>.</>}>
+        {text.projectsPage.intro}
       </PageHeader>
 
       <section className="mx-auto max-w-6xl px-4 py-10">
         <Reveal>
           <p className="max-w-2xl text-sm leading-6 text-muted-foreground">
-            A focused collection of full-stack, frontend, and backend projects that show how I work across UI, APIs, data, and product flow.
+            {text.projectsPage.body}
           </p>
         </Reveal>
 
@@ -44,8 +47,8 @@ function ProjectsPage() {
 
       <section className="mx-auto max-w-6xl px-4 py-12">
         <Reveal>
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">// Certifications</p>
-          <h2 className="mt-3 font-display text-3xl font-semibold md:text-4xl">Verified credentials.</h2>
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">// {text.projectsPage.certificationsEyebrow}</p>
+          <h2 className="mt-3 font-display text-3xl font-semibold md:text-4xl">{text.projectsPage.certificationsTitle}</h2>
         </Reveal>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {certifications.map((c, i) => (
@@ -54,7 +57,7 @@ function ProjectsPage() {
                 <BadgeCheck className="text-primary" size={20} />
                 <h3 className="mt-3 text-sm font-semibold">{c.name}</h3>
                 <p className="mt-1 text-xs text-muted-foreground">{c.org}</p>
-                <p className="mt-3 font-mono text-[11px] text-muted-foreground">Issued {c.date}</p>
+                <p className="mt-3 font-mono text-[11px] text-muted-foreground">{text.projectsPage.issued} {c.date}</p>
               </a>
             </Reveal>
           ))}

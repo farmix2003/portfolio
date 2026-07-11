@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Github, Linkedin, Mail, Send, ArrowUpRight, MapPin, Clock } from "lucide-react";
 import { PageHeader } from "@/components/site/PageHeader";
+import { useLanguage } from "#/lib/i18n";
 import Reveal from "#/components/site/Reveal";
 
 const socialLinks = [
@@ -49,10 +50,12 @@ export const Route = createFileRoute("/contact")({
 });
 
 function ContactPage() {
+  const { text } = useLanguage();
+
   return (
     <>
-      <PageHeader eyebrow="Contact" title={<>Find me where <span className="text-gradient">work happens</span>.</>}>
-        I keep this page simple: no contact form, no fake inbox. Use the direct links below and I will reply from the channel you choose.
+      <PageHeader eyebrow={text.contactPage.eyebrow} title={<>{text.contactPage.title} <span className="text-gradient">{text.contactPage.gradient}</span>.</>}>
+        {text.contactPage.intro}
       </PageHeader>
 
       <section className="mx-auto max-w-6xl px-4 py-12">
@@ -80,10 +83,7 @@ function ContactPage() {
                       {value}
                     </p>
                     <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                      {label === "Email" && "Best for project details, collaboration ideas, and official communication."}
-                      {label === "LinkedIn" && "Best for professional updates, hiring conversations, and networking."}
-                      {label === "GitHub" && "Best for reviewing my code, projects, and development activity."}
-                      {label === "Telegram" && "Best for quick messages and faster informal communication."}
+                      {text.contactPage.cards[label]}
                     </p>
                   </div>
                 </div>
@@ -99,8 +99,8 @@ function ContactPage() {
                 <MapPin size={18} />
               </span>
               <div>
-                <p className="text-sm font-medium text-foreground">Location</p>
-                <p className="text-sm text-muted-foreground">Remote, available worldwide</p>
+                <p className="text-sm font-medium text-foreground">{text.contactPage.location}</p>
+                <p className="text-sm text-muted-foreground">{text.contactPage.locationValue}</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -108,8 +108,8 @@ function ContactPage() {
                 <Clock size={18} />
               </span>
               <div>
-                <p className="text-sm font-medium text-foreground">Response</p>
-                <p className="text-sm text-muted-foreground">Usually within 24-48 hours</p>
+                <p className="text-sm font-medium text-foreground">{text.contactPage.response}</p>
+                <p className="text-sm text-muted-foreground">{text.contactPage.responseValue}</p>
               </div>
             </div>
           </div>

@@ -1,37 +1,39 @@
-import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ArrowRight, Github, Mail, Sparkles } from "lucide-react";
-const roles = [
-  "Full Stack Engineer",
-  "Frontend Developer",
-  "Backend Developer",
-];
+import { TransitionLink } from "@/components/site/PageTransition";
+import { useLanguage } from "#/lib/i18n";
+
+const roles = ["Full Stack Engineer", "Frontend Developer", "Backend Developer"];
 
 function useTyped(words: string[], speed = 70, hold = 1400) {
   const [i, setI] = useState(0);
   const [text, setText] = useState("");
   const [deleting, setDeleting] = useState(false);
+
   useEffect(() => {
-    const word = words[i % words.length]
+    const word = words[i % words.length];
     if (!deleting && text === word) {
-      const t = setTimeout(() => setDeleting(true), hold)
-      return () => clearTimeout(t)
+      const t = setTimeout(() => setDeleting(true), hold);
+      return () => clearTimeout(t);
     }
     if (deleting && text === "") {
-      setDeleting(false)
-      setI((x) => x + 1)
-      return
+      setDeleting(false);
+      setI((x) => x + 1);
+      return;
     }
     const t = setTimeout(() => {
       setText(deleting ? word.slice(0, text.length - 1) : word.slice(0, text.length + 1));
     }, deleting ? 35 : speed);
     return () => clearTimeout(t);
   }, [text, deleting, i, words, speed, hold]);
+
   return text;
 }
 
 const Hero = () => {
-  const typed = useTyped(roles)
+  const typed = useTyped(roles);
+  const { text } = useLanguage();
+
   return (
     <section className="relative isolate overflow-hidden pb-24 pt-36 md:pt-44">
       <div className="pointer-events-none absolute inset-0 -z-10 grid-bg radial-fade" />
@@ -46,39 +48,39 @@ const Hero = () => {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
             </span>
-            Available for new projects · Q3 2026
+            {text.hero.available}
           </div>
 
           <h1 className="mt-6 font-display text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
-            <span className="block text-foreground">Building software</span>
-            <span className="block text-gradient animate-gradient">that feels inevitable.</span>
+            <span className="block text-foreground">{text.hero.titleTop}</span>
+            <span className="block text-gradient animate-gradient">{text.hero.titleGradient}</span>
           </h1>
 
           <p className="mt-5 max-w-xl text-base text-muted-foreground md:text-lg">
-            I'm <span className="text-foreground">Farrukh Tuganov</span> — a{" "}
+            {text.hero.introName} <span className="text-foreground">{text.hero.name}</span>{" "}
             <span className="font-medium text-primary">
               {typed}
               <span className="ml-0.5 inline-block h-5 w-[2px] translate-y-0.5 bg-primary animate-blink" />
             </span>
             <br />
-            shipping polished, performant products for ambitious teams.
+            {text.hero.subtitle}
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link to="/projects" className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-primary to-secondary px-5 py-3 text-sm font-medium text-background shadow-[0_0_40px_-8px_var(--primary)] transition-all hover:scale-[1.03] hover:shadow-[0_0_55px_-4px_var(--primary)]">
-              View Projects
+            <TransitionLink to="/projects" className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-primary to-secondary px-5 py-3 text-sm font-medium text-background shadow-[0_0_40px_-8px_var(--primary)] transition-all hover:scale-[1.03] hover:shadow-[0_0_55px_-4px_var(--primary)]">
+              {text.hero.viewProjects}
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-            </Link>
-            <Link to="/contact" className="group inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-5 py-3 text-sm font-medium text-foreground transition-all hover:border-primary/50 hover:bg-white/[0.06]">
-              <Mail size={16} /> Contact Me
-            </Link>
+            </TransitionLink>
+            <TransitionLink to="/contact" className="group inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-5 py-3 text-sm font-medium text-foreground transition-all hover:border-primary/50 hover:bg-white/[0.06]">
+              <Mail size={16} /> {text.hero.contactMe}
+            </TransitionLink>
             <a href="https://github.com/farmix2003" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl px-3 py-3 text-sm text-muted-foreground hover:text-foreground">
               <Github size={16} /> github
             </a>
           </div>
 
           <dl className="mt-12 grid max-w-md grid-cols-3 gap-6 border-t border-white/5 pt-6">
-            {[["Starter", "In the IT"], ["10+", "Projects developed"], ["500+", "Commits"]].map(([n, l]) => (
+            {text.hero.stats.map(([n, l]) => (
               <div key={l}>
                 <dt className="text-2xl font-semibold text-foreground">{n}</dt>
                 <dd className="text-xs text-muted-foreground">{l}</dd>
@@ -123,14 +125,14 @@ const Hero = () => {
 export async function deploy() {
   const build = await bundle({ mode: "prod" });
   const env   = await provision("edge");
-  return env.publish(build); // 🚀
+  return env.publish(build);
 }`}
             </pre>
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

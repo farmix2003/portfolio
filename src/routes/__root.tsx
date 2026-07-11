@@ -16,6 +16,7 @@ import { PageTransition } from "@/components/site/PageTransition";
 import { ScrollProgress } from "#/components/site/ScrollProgress";
 import Header from "#/components/site/Header";
 import { reportLovableError } from "#/lib/error-report";
+import { LanguageProvider } from "#/lib/i18n";
 
 function NotFoundComponent() {
   return (
@@ -94,15 +95,17 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
-      <ScrollProgress />
-      <MouseGlow />
-      <Header />
-      <main className="relative z-10">
-        <PageTransition>
-          <Outlet />
-        </PageTransition>
-      </main>
-      <Footer />
+      <LanguageProvider>
+        <ScrollProgress />
+        <MouseGlow />
+        <Header />
+        <main className="relative z-10">
+          <PageTransition>
+            <Outlet />
+          </PageTransition>
+        </main>
+        <Footer />
+      </LanguageProvider>
     </QueryClientProvider>
   );
 }
