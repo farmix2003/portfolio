@@ -28,7 +28,7 @@ function Index() {
       <SkillSection />
       <ExperienceSection />
       <FeaturedProjects />
-      <Terminal />
+      {/* <Terminal /> */}
       <ContactCTA />
     </>
   );
