@@ -445,34 +445,18 @@ body {
 }
 
 /* ── 4. Scroll animations ────────────────────── */
-@keyframes reveal {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.reveal {
-  animation: reveal linear both;
-  animation-timeline: view();
-  animation-range: entry 0% entry 35%;
-}
-
-@keyframes fade {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-.fade-in {
-  animation: fade linear both;
-  animation-timeline: view();
-  animation-range: entry 0% entry 30%;
-}
+/* Note: .reveal is handled by @utility reveal + JS IntersectionObserver in Reveal.tsx.
+   Scroll-driven animation-timeline overrides were removed to prevent input/interaction conflicts. */
 
 /* ── 5. Scroll progress bar ──────────────────── */
 .scroll-progress {
   position: fixed;
   top: 0; left: 0;
   height: 3px;
-  background: #6366f1;
+  width: 100%;
+  z-index: 60;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  box-shadow: 0 0 12px var(--primary);
   transform-origin: left;
   animation: progress linear;
   animation-timeline: scroll(root);
