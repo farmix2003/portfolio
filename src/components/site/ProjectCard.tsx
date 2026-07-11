@@ -38,6 +38,7 @@ export function ProjectCard({ p }: { p: P }) {
   const title = translated?.title ?? p.title;
   const description = translated?.description ?? p.description;
   const highlights = translated?.highlights ?? p.highlights;
+  const hasDemo = "demo" in p && Boolean(p.demo);
 
   return (
     <article className="group relative overflow-hidden rounded-2xl glass hover-lift">
@@ -54,8 +55,10 @@ export function ProjectCard({ p }: { p: P }) {
         <div className="flex items-start justify-between gap-3">
           <h3 className="font-display text-lg font-semibold transition-colors group-hover:text-primary">{title}</h3>
           <div className="flex gap-1.5 opacity-60 transition-opacity group-hover:opacity-100">
-            <a href={p.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="grid h-8 w-8 place-items-center rounded-lg border border-white/10 hover:border-primary/50 hover:text-primary"><Github size={14} /></a>
-            <a href={p.demo} target="_blank" rel="noreferrer" aria-label="Demo" className="grid h-8 w-8 place-items-center rounded-lg border border-white/10 hover:border-primary/50 hover:text-primary"><ExternalLink size={14} /></a>
+            <a href={p.github} target="_blank" rel="noreferrer" aria-label={`${title} GitHub`} title="GitHub" className="grid h-8 w-8 place-items-center rounded-lg border border-white/10 hover:border-primary/50 hover:text-primary"><Github size={14} /></a>
+            {hasDemo && (
+              <a href={p.demo} target="_blank" rel="noreferrer" aria-label={`${title} review`} title="Review" className="grid h-8 w-8 place-items-center rounded-lg border border-white/10 hover:border-primary/50 hover:text-primary"><ExternalLink size={14} /></a>
+            )}
           </div>
         </div>
         <p className="mt-2 text-sm text-muted-foreground">{description}</p>

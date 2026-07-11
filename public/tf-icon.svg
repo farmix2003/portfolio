@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="TF monogram">
+  <defs>
+    <linearGradient id="bg" x1="64" y1="48" x2="448" y2="464" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#111827" />
+      <stop offset="0.52" stop-color="#050505" />
+      <stop offset="1" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="mark" x1="116" y1="136" x2="398" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" />
+      <stop offset="0.42" stop-color="#dbeafe" />
+      <stop offset="0.72" stop-color="#3b82f6" />
+      <stop offset="1" stop-color="#06b6d4" />
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" result="blur" />
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.231 0 0 0 0 0.510 0 0 0 0 0.965 0 0 0 0.75 0" />
+      <feBlend in="SourceGraphic" mode="screen" />
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="url(#bg)" />
+  <path d="M86 128C86 104.252 105.252 85 129 85H383C406.748 85 426 104.252 426 128V384C426 407.748 406.748 427 383 427H129C105.252 427 86 407.748 86 384V128Z" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="2" />
+  <path d="M121 383L392 112" stroke="#38bdf8" stroke-opacity="0.16" stroke-width="24" stroke-linecap="round" />
+
+  <g filter="url(#glow)">
+    <path d="M123 151H294V202H233V361H178V202H123V151Z" fill="url(#mark)" />
+    <path d="M288 151H395V202H343V241H390V291H343V361H288V151Z" fill="url(#mark)" />
+  </g>
+
+  <path d="M123 151H294V202H233V361H178V202H123V151Z" fill="#ffffff" fill-opacity="0.08" />
+  <path d="M288 151H395V202H343V241H390V291H343V361H288V151Z" fill="#ffffff" fill-opacity="0.08" />
+</svg>

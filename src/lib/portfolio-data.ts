@@ -83,8 +83,7 @@ export const projects = [
     description:
       "Full-stack food ordering platform developed as a diploma project with role-based access, menu management, and order processing.",
     tags: ["Spring Boot", "React", "TypeScript", "MySQL"],
-    github: "https://github.com",
-    demo: "https://example.com",
+    github: "https://github.com/farmix2003/Food-Ordering-Web-Application.git",
     highlights: [
       "Role-based authentication (Admin/User)",
       "Order management system",
@@ -97,8 +96,8 @@ export const projects = [
     description:
       "Full-stack blog application built during ITransition training with user authentication, post creation, and content management features.",
     tags: ["MongoDB", "Express", "React", "Node.js"],
-    github: "https://github.com",
-    demo: "https://example.com",
+    github: "https://github.com/farmix2003/mern.git",
+    demo: "https://course-project-front-85v261i4h-farrukhs-projects-6a1f17fb.vercel.app/",
     highlights: [
       "JWT authentication system",
       "CRUD blog posts system",
@@ -111,6 +110,8 @@ export const projects = [
   description:
     "Movie discovery application built with React and external movie APIs, featuring search, filtering, and detailed movie information.",
   tags: ["React", "JavaScript", "REST API"],
+  github: "https://github.com/farmix2003/Imdb-Clone.git",
+  demo: "https://imdb-clone-nu.vercel.app/",
   highlights: [
     "Movie search",
     "API integration",
@@ -123,6 +124,8 @@ export const projects = [
   description:
     "Frontend e-commerce application with product search, category filtering, and shopping cart functionality.",
   tags: ["React", "JavaScript", "CSS"],
+  github: "https://github.com/farmix2003/E-Commerce.git",
+  demo: "https://e-commerce-gules-three.vercel.app/",
   highlights: [
     "Shopping cart",
     "Product filtering",
@@ -135,8 +138,7 @@ export const projects = [
     description:
       "Modern developer portfolio built using TanStack Start with animated UI and component-based architecture.",
     tags: ["React", "TypeScript", "Tailwind"],
-    github: "https://github.com",
-    demo: "https://example.com",
+    github: "https://github.com/farmix2003/portfolio.git",
     highlights: [
       "Modern UI/UX design",
       "Dark mode support",
