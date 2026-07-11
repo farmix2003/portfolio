@@ -3,9 +3,8 @@ import { copyFile, mkdir, writeFile } from "node:fs/promises";
 const serverSource = String.raw`import { createReadStream, existsSync } from "node:fs";
 import { extname, join, normalize } from "node:path";
 import { createServer } from "node:http";
-import { fileURLToPath } from "node:url";
 
-const root = fileURLToPath(new URL("../client", import.meta.url));
+const root = join(process.cwd(), "dist", "client");
 
 const contentTypes = {
   ".css": "text/css; charset=utf-8",
