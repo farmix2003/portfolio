@@ -38,7 +38,7 @@ export const experience = [
     {
         company: "EPAM Systems",
         role: "Java Developer Lab Intern",
-        period: "Present",
+        period: "2026-Present",
         points: [
           "Learning Java and Spring Boot fundamentals through a structured internship program.",
           "Building several practice projects, including a RESTful API for a simple e-commerce application.",
@@ -228,5 +228,14 @@ export const articles = [
     minutes: 4,
     date: "2026",
   },
+  {
+    title:"Why communication is important!?",
+    excerpt:"Effective communication is the foundation of all successful human interactions, serving as the bridge that connects people, ideas, and organizations",
+    content:"🏢 In the Workplace In a professional setting, communication is the fuel that drives operational efficiency and organizational success."+"• Drives Productivity: Clear instructions and transparent expectations prevent costly mistakes, minimize redundancies, and reduce wasted time.  • Fosters Teamwork: Open channels allow diverse teams to collaborate smoothly, align on shared goals, and support one another.• Enhances Innovation: When employees feel safe communicating openly, they share creative ideas and unique perspectives without fear of judgment.• Improves Leadership: Strong leaders use communication to inspire, motivate, build alignment, and guide their teams through organizational change.🤝 In Personal Relationships: Human beings are inherently social creatures, and communication is the mechanism through which we build our social structures. • Builds Trust: Sharing thoughts, vulnerabilities, and feelings honestly creates deep, reliable bonds between partners, friends, and family. • Resolves Conflicts: Most arguments stem from misunderstandings; active listening and clear speaking de-escalate tension before it turns into resentment.• Validates Emotions: Good communication allows people to express genuine empathy, making loved ones feel heard, seen, and valued. 🧠 For Personal Growth Beyond how you interact with others, communication heavily influences your internal development and self-perception. • Boosts Confidence: Being able to articulate your thoughts clearly increases your self-esteem in social settings, public speaking engagements, and interviews. • Improves Critical Thinking: Engaging in healthy debates and active listening expands your worldview, challenges your biases, and sharpens your mind.",
+  
+    category:"Offtopic",
+    minutes: 3,
+    date:"2026"
+  }
 ];
 
