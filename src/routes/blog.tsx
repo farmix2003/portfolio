@@ -141,6 +141,12 @@ const articleUz: Record<string, Pick<Article, "title" | "excerpt" | "content" | 
     content: "Full-stack developmentga yo'lim trening, internship va amaliy loyihalar orqali shakllandi. ITransition menga JavaScript, React, Node.js, autentifikatsiya va CRUD ilovalar bo'yicha kuchli asos berdi, keyingi ishlar esa bu bilimlarni realroq UI va API muammolarida qo'llashga yordam berdi. Hali ham o'rganyapman, lekin har bir loyiha complete feature yaratish, mavjud kodni o'qish va user experience'ni yaxshilashda ishonchimni oshirdi.",
     category: "Career",
   },
+  "Why communication is important!?":{
+    title:"Nima uchun kommunikatsiya muhim!?",
+    excerpt:"Dasturchi sifatida texnik va no-texnik kommunikatsiya qobiliyatining ahamiyati.",
+    content:"Dasturchi sifatida texnik bilimlar muhim bo'lsa-da, samarali kommunikatsiya loyihalarni muvaffaqiyatli amalga oshirishda hal qiluvchi rol o'ynaydi. Texnik kommunikatsiya kod sharhlari, dokumentatsiya va jamoa ichidagi texnik muhokamalar orqali bilim almashishni osonlashtiradi. No-texnik kommunikatsiya esa mijozlar bilan talablarni tushunish, jamoa a'zolari bilan hamkorlik qilish va loyihaning umumiy maqsadlarini aniq ifodalash imkonini beradi. Bu qobiliyatlar nafaqat ish jarayonini silliq qiladi, balki professional rivojlanishga ham hissa qo'shadi.",
+    category:"Career"
+  }
 };
 
 function ArticleCard({
